@@ -1,5 +1,5 @@
-import { QRCodeCanvas } from "qrcode.react"
-import { useRef, useState } from "react"
+import { QRCodeCanvas } from 'qrcode.react'
+import { useRef, useState } from 'react'
 import { toast } from 'sonner'
 import './CodeQr.scss'
 import CustomButton from './CustomButton'
@@ -14,9 +14,23 @@ function CodeQr () {
 
   // Función para generar el QR
   const generateQR = (e: React.FormEvent<HTMLFormElement>): void => {
+    // Evitar que se recargue la página
     e.preventDefault()
+    // Validar si el input tiene valor
     if (!inputRef.current) return
-    setLink(inputRef.current.value)
+    // Obtener el valor del input
+    const { value } = inputRef.current
+    // Validar si el valor es vacío
+    if (!value) {
+      // Mostrar mensaje de error
+      toast.error('Debes ingresar un enlace')
+      return
+    }
+    // Actualizar el estado con el link ingresado
+    setLink(value)
+    // Limpiar el input
+    inputRef.current.value = ''
+    // Mostrar mensaje de éxito
     toast.success('QR generado correctamente')
   }
 
@@ -54,6 +68,7 @@ function CodeQr () {
         <input
           ref={inputRef}
           type="text"
+          className="input"
           placeholder="https://example.com"
         />
         <CustomButton type='submit' text='Generar QR' />
@@ -69,13 +84,14 @@ function CodeQr () {
               size={300}
             />
           </div>
+          <em className="link">{link}</em>
         </div>
       )}
 
       {link && (
         <div className='button-actions'>
-          <CustomButton text='Copiar Imagen' action={copyToClipboard} />
-          <CustomButton text='Descargar QR' action={downloadQR} />
+          <CustomButton color="accent" text='Copiar Imagen' action={copyToClipboard} />
+          <CustomButton color="accent" text='Descargar QR' action={downloadQR} />
         </div>
       )}
     </section>

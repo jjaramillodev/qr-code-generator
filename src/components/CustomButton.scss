@@ -1,8 +1,26 @@
 .custom-button {
+  width: fit-content;
+  height: 3rem; // 48px
   background-color: transparent;
-  padding: 10px 20px;
-  border: 2px solid var(--primary-color);
-  border-radius: 7px;
-  color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 0.5rem; // 8px
+  font-size: 1rem; // 16px
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.875rem 1.875rem; // 14px 30px
+  border: 0.125rem solid transparent; // 2px
+  color: var(--color-text);
   cursor: pointer;
+  &:hover, &:focus {
+    opacity: 0.8;
+  }
+  &.primary {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  &.accent {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
 }

@@ -1,8 +1,8 @@
 import { Toaster } from 'sonner'
-import './App.css'
+import './App.scss'
 import CodeQr from './components/CodeQr'
 
-function App() {
+function App () {
   return (
     <>
       <main className='container_app'>
@@ -11,7 +11,7 @@ function App() {
       <Toaster toastOptions={{
         style: {
           minHeight: '35px',
-          padding: '10px',
+          padding: '10px'
         }
       }} />
     </>

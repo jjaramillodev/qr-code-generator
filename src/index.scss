@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 500;
+  src: url(@fontsource/montserrat/files/montserrat-latin-400-normal.woff2) format('woff2');
+}
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background: #1B1C22;
+  --color-primary: #6772EB;
+  --color-primary-80: #6772EB80;
+  --color-secondary: #222329;
+  --color-accent: #00cdb8;
+  --color-text: #C5C0B1;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  height: 3rem; // 48px
+  padding: 1rem; // 16px
+  border: none;
+  border-radius: 0.5rem; // 8px
+  outline: 2px solid var(--color-primary-80);
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 1rem; // 16px
+  line-height: 1;
+  margin-bottom: 1.25rem; // 20px
+  &:active, &:focus {
+    outline-color: var(--color-primary);
+  }
+}
