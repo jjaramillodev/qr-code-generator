@@ -91,7 +91,7 @@ function CodeQr () {
       {link && (
         <div className='button-actions'>
           <CustomButton color="accent" text='Copiar Imagen' action={copyToClipboard} />
-          <CustomButton color="accent" text='Descargar QR' action={downloadQR} />
+          <CustomButton color="accent" text='Descargar Imagen' action={downloadQR} />
         </div>
       )}
     </section>
