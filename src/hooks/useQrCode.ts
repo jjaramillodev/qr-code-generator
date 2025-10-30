@@ -83,13 +83,13 @@ export const useQrCode = (options: UseQrCodeOptions) => {
 
   
   // 3. Función de DESCARGA
-  const downloadQr = (filename = 'qrcode.png') => {
+  const downloadQr = () => {
     if (!highResDataURL) return;
 
     // Crea un link temporal para forzar la descarga
     const link = document.createElement('a');
     link.href = highResDataURL;
-    link.download = filename;
+    link.download = 'qrcode.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
