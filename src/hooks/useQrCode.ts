@@ -68,9 +68,11 @@ export const useQrCode = (options: UseQrCodeOptions) => {
     toDataURL(value, qrCodeOptions)
       .then(url => {
         setHighResDataURL(url);
+        toast.success('¡QR generado con éxito!');
       })
       .catch(err => {
         console.error("Error generating high-res QR Code:", err);
+        toast.error('Error al generar el código QR.');
         setHighResDataURL(null);
       })
       .finally(() => {

@@ -43,9 +43,9 @@ export function QrCode () {
       </form>
 
       <div className='container_canvas'>
-        <div>
+        {currentValue && 
           <QRCodeCanvas {...viewQrProps} />
-        </div>
+        }
         <em className="link">{currentValue}</em>
       </div>
 
