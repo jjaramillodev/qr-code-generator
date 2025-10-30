@@ -3,10 +3,9 @@
   height: 100%;
   background-color: var(--color-secondary);
   border-radius: 10px;
-  padding: 2.5rem; // 40px
+  padding: 2rem; // 32px
   display: grid;
-  justify-items: center;
-  row-gap: 1.875rem; // 30px
+  row-gap: 1.3rem; // 21px
   text-align: center;
   h1 {
     color: var(--color-primary);
@@ -29,6 +28,8 @@
   }
   .button-actions {
     display: flex;
-    column-gap: 0.625rem; // 10px
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.625rem; // 10px
   }
 }

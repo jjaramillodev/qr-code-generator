@@ -1,12 +1,12 @@
 import { Toaster } from 'sonner'
 import './App.scss'
-import CodeQr from './components/CodeQr'
+import { QrCode } from './components/QrCode'
 
 function App () {
   return (
     <>
       <main className='container_app'>
-        <CodeQr />
+        <QrCode />
       </main>
       <Toaster toastOptions={{
         style: {

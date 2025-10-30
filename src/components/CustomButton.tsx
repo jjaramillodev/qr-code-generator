@@ -5,14 +5,13 @@ interface CustomButtonProps {
   type?: 'button' | 'submit'
   text: string
   action?: () => void
+  disabled?: boolean
 }
 
-function CustomButton ({ type = 'button', color = 'primary', text, action }: CustomButtonProps) {
+export function CustomButton ({ type = 'button', color = 'primary', text, action, disabled }: CustomButtonProps) {
   return (
-    <button type={type} className={`${color} custom-button`} onClick={action}>
+    <button type={type} className={`${color} custom-button`} onClick={action} disabled={disabled}>
       {text}
     </button>
   )
 }
-
-export default CustomButton
